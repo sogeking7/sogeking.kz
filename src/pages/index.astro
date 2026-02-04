@@ -1,0 +1,36 @@
+---
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kaiyrkhan Kairolla — Software & ML Engineer</title>
+    <meta
+      name="description"
+      content="Minimal personal website for Kaiyrkhan Kairolla, showcasing calm, modern digital craftsmanship."
+    />
+    <script is:inline>
+      const storedTheme = localStorage.getItem('theme');
+      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      const theme = storedTheme === 'light' || storedTheme === 'dark' ? storedTheme : systemTheme;
+      document.documentElement.classList.toggle('dark', theme === 'dark');
+    </script>
+  </head>
+  <body class="min-h-screen">
+    <Header client:load />
+    <main class="mx-auto w-full max-w-5xl px-6 pb-16 pt-12">
+      <Hero />
+      <About />
+      <Contact />
+    </main>
+    <Footer />
+  </body>
+</html>
