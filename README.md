@@ -1,0 +1,2 @@
+# sogeking.kz
+Personal website
