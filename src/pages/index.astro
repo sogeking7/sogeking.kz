@@ -24,12 +24,11 @@ import "../styles/global.css";
       document.documentElement.classList.toggle('dark', theme === 'dark');
     </script>
   </head>
-  <body class="min-h-screen">
+  <body class="min-h-screen bg-background text-foreground font-sans antialiased">
     <Header client:load />
     <main class="mx-auto w-full max-w-5xl px-6 pb-16 pt-12">
       <Hero />
       <About />
-      <Contact />
     </main>
     <Footer />
   </body>

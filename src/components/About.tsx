@@ -1,15 +1,12 @@
 export default function About() {
   return (
     <section id="about" className="py-12">
-      <div className="max-w-2xl space-y-4">
-        <p className="text-xs uppercase tracking-[0.35em] text-muted-foreground">
+      <div className="max-w-2xl">
+        <h2 className="text-2xl font-semibold md:text-3xl mb-4">
           About
-        </p>
-        <h2 className="font-display text-2xl md:text-3xl">
-          Who am I?
         </h2>
-        <p className="text-base text-muted-foreground">
-          I enjoy building things && solving problems.
+        <p className="text-base text-pretty text-muted-foreground">
+          I’m a Software Developer and ML Engineer. I enjoy building things and solving problems.
         </p>
       </div>
     </section>

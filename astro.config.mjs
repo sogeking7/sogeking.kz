@@ -1,10 +1,10 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
-import tailwind from '@astrojs/tailwind';
+import tailwindcss from "@tailwindcss/vite";
 import { fileURLToPath } from 'node:url';
 
 export default defineConfig({
-  integrations: [react(), tailwind({ applyBaseStyles: false })],
+  integrations: [react(), tailwindcss()],
   vite: {
     resolve: {
       alias: {
