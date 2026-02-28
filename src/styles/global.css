@@ -169,6 +169,81 @@
   --tracking-widest: calc(var(--tracking-normal) + 0.1em);
 }
 
+/* ── Animations ────────────────────────────────── */
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+@keyframes statusPulse {
+  0%, 100% { transform: scale(1);   opacity: 1;   }
+  50%       { transform: scale(1.6); opacity: 0.4; }
+}
+
 body {
   letter-spacing: var(--tracking-normal);
 }
+
+/* ── Staggered reveal ──────────────────────────── */
+
+.reveal {
+  opacity: 0;
+  animation: fadeSlideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.reveal-1 { animation-delay: 0.05s; }
+.reveal-2 { animation-delay: 0.18s; }
+.reveal-3 { animation-delay: 0.32s; }
+.reveal-4 { animation-delay: 0.46s; }
+.reveal-5 { animation-delay: 0.60s; }
+
+/* ── Floating icons ────────────────────────────── */
+
+@keyframes float {
+  0%, 100% { transform: translate(0px, 0px); }
+  25%       { transform: translate(8px, -12px); }
+  50%       { transform: translate(-6px, 8px); }
+  75%       { transform: translate(10px, 4px); }
+}
+
+/* ── Blinking cursor ───────────────────────────── */
+
+.cursor::after {
+  content: '_';
+  animation: blink 1.2s step-end infinite;
+}
+
+/* ── Status dot ────────────────────────────────── */
+
+.status-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: oklch(0.72 0.17 145);
+  flex-shrink: 0;
+  animation: statusPulse 2.2s ease-in-out infinite;
+}
+
+/* ── Social link underline slide ───────────────── */
+
+.social-link {
+  position: relative;
+  transition: color 0.2s ease;
+}
+.social-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.25s ease;
+}
+.social-link:hover::after { width: 100%; }

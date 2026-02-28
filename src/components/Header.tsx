@@ -8,11 +8,11 @@ const navItems = [
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-10 w-full border-b border-border bg-background backdrop-blur">
-      <div className="mx-auto flex w-full max-w-5xl items-center justify-between px-6 py-4">
-        <span className="font-sans font-bold uppercase">
+    <header className="sticky top-0 z-10 w-full border-b border-border/60 bg-background/80 backdrop-blur-md">
+      <div className="mx-auto flex w-full max-w-5xl items-center justify-between px-6 py-3.5">
+        <a href="/" className="font-bold uppercase tracking-widest text-sm hover:text-primary transition-colors">
           sogeking.kz
-        </span>
+        </a>
         <div className="flex items-center gap-3">
           <nav className="hidden items-center gap-1 sm:flex">
             {navItems.map((item) => (
@@ -21,7 +21,7 @@ export default function Header() {
               </Button>
             ))}
           </nav>
-          <Separator orientation="vertical" className="hidden h-6 sm:block" />
+          <Separator orientation="vertical" className="hidden h-5 sm:block" />
           <ThemeToggle />
         </div>
       </div>

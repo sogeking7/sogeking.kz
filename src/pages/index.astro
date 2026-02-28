@@ -4,6 +4,8 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import Rickroll from "@/components/Rickroll";
+import Background from "@/components/Background";
 import "../styles/global.css";
 ---
 
@@ -25,11 +27,13 @@ import "../styles/global.css";
     </script>
   </head>
   <body class="min-h-screen bg-background text-foreground font-sans antialiased">
+    <Background client:load />
     <Header client:load />
     <main class="mx-auto w-full max-w-5xl px-6 pb-16 pt-12">
       <Hero />
       <About />
     </main>
+    <Rickroll client:load />
     <Footer />
   </body>
 </html>
